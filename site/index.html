@@ -3,24 +3,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SKASC | College Lab Portal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8fafc">
+  <title>SKASC | Lab Portal</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <header class="hero">
     <nav class="nav">
       <div class="brand">
         <span class="logo">S</span>
-        SKASC Portal
+        <span>SKASC Portal</span>
       </div>
       <span class="badge">Student Portal</span>
     </nav>
 
     <div class="hero-content">
       <p class="eyebrow">SRI KRISHNA ARTS AND SCIENCE COLLEGE</p>
-      <h1 id="college">Welcome to Our College</h1>
-      <p class="subtitle">Your campus laboratory schedule, all in one place.</p>
+      <h1 id="college">Welcome to SKASC</h1>
+      <p class="subtitle">A simple space for your campus laboratory schedule.</p>
 
       <div class="student-tag">
         <span>PARTICIPANT CODE</span>
@@ -30,38 +32,42 @@
   </header>
 
   <main class="container">
+
     <section class="section-heading">
       <div>
-        <p class="eyebrow blue">CAMPUS FACILITIES</p>
-        <h2>Available Lab Slots</h2>
-        <p class="muted">Check your laboratory timings below.</p>
+        <p class="eyebrow blue">CAMPUS</p>
+        <h2>Laboratory Schedule</h2>
+        <p class="muted">Your daily lab timings at a glance.</p>
       </div>
-      <span class="live"><span class="dot"></span> Schedule</span>
+      <span class="live">
+        <span class="dot"></span>
+        Schedule
+      </span>
     </section>
 
     <section id="labs" class="labs-grid">
-      <p>Loading laboratory schedule...</p>
+      <p>Loading lab schedule...</p>
     </section>
 
     <section class="info-card">
       <div class="info-icon">✓</div>
       <div>
         <h3>Automated Deployment</h3>
-        <p>Your website is published using Azure Blob Storage and GitHub Actions.</p>
+        <p>Hosted on Azure Blob Storage and deployed through GitHub Actions.</p>
       </div>
     </section>
 
     <section class="deployment">
-      <p class="eyebrow blue">BUILD INFORMATION</p>
+      <p class="eyebrow blue">SYSTEM</p>
       <h2>Deployment Details</h2>
 
       <div class="detail-row">
-        <span>Status</span>
-        <strong class="success">● Deployed by GitHub Actions</strong>
+        <span>Deployment</span>
+        <strong class="success">● Successful</strong>
       </div>
 
       <div class="detail-row">
-        <span>Commit ID</span>
+        <span>Commit SHA</span>
         <code id="sha">Loading...</code>
       </div>
 
@@ -70,11 +76,12 @@
         <strong id="run">Loading...</strong>
       </div>
     </section>
+
   </main>
 
   <footer>
-    <p>© <span id="year"></span> Sri Krishna Arts and Science College</p>
-    <p>Powered by Azure + GitHub Actions</p>
+    <p>© <span id="year"></span> SKASC</p>
+    <p>Azure · GitHub Actions</p>
   </footer>
 
   <script src="app.js"></script>
