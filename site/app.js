@@ -10,13 +10,13 @@ async function loadSiteData() {
     const data = await response.json();
 
     document.getElementById("college").textContent =
-      data.collegeName || "College Portfolio";
+      data.college || "College Portfolio";
 
     document.getElementById("collegeName").textContent =
-      data.collegeName || "Not configured";
+      data.college || "Not configured";
 
     document.getElementById("participantCode").textContent =
-      data.participantCode || "Not configured";
+      data.code || "Not configured";
 
     document.getElementById("labSlot").textContent =
       data.labSlot || "Not assigned";
