@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College Site</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f1f5f9;
+      color: #172554;
+    }
+
+    header {
+      background: #123b70;
+      color: white;
+      text-align: center;
+      padding: 35px 15px;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 0 16px;
+    }
+
+    .card {
+      background: white;
+      padding: 24px;
+      margin-bottom: 18px;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px #00000010;
+    }
+
+    h2 {
+      color: #1765a8;
+    }
+
+    .status {
+      color: #15803d;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="college">College Portfolio</h1>
+    <p>Azure Blob Storage + GitHub Actions CI/CD</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Participant Details</h2>
+      <p><strong>College:</strong> <span id="collegeName">Loading...</span></p>
+      <p><strong>Participant Code:</strong> <span id="participantCode">Loading...</span></p>
+      <p><strong>Lab Slot:</strong> <span id="labSlot">Loading...</span></p>
+    </section>
+
+    <section class="card">
+      <h2>Deployment Status</h2>
+      <p class="status">Website is live!</p>
+      <p><strong>Commit SHA:</strong> <span id="commitSha">Loading...</span></p>
+      <p><strong>Workflow Run:</strong> <span id="runNumber">Loading...</span></p>
+    </section>
+  </main>
+
+  <footer>
+    Automated deployment using Azure and GitHub Actions
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
