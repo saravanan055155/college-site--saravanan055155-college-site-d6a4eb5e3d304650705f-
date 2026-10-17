@@ -1,36 +1,59 @@
 
-async function loadSiteData() {
+async function loadSite() {
   try {
-    const response = await fetch("data.json?t=" + Date.now());
+    const [dataResponse, buildResponse] = await Promise.all([
+      fetch("data.json?t=" + Date.now()),
+      fetch("build.json?t=" + Date.now())
+    ]);
 
-    if (!response.ok) {
-      throw new Error("Unable to load site data");
+    if (!dataResponse.ok || !buildResponse.ok) {
+      throw new Error("Could not load site data");
     }
 
-    const data = await response.json();
+    const data = await dataResponse.json();
+    const build = await buildResponse.json();
 
-    document.getElementById("college").textContent =
-      data.college || "College Portfolio";
+    document.getElementById("college").textContent = data.college;
+    document.getElementById("code").textContent = data.code;
+    document.getElementById("sha").textContent = build.sha;
+    document.getElementById("run").textContent = build.run;
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
 
-    document.getElementById("collegeName").textContent =
-      data.college || "Not configured";
+    const icons = ["💻", "🔬", "🧪"];
+    const labsContainer = document.getElementById("labs");
 
-    document.getElementById("participantCode").textContent =
-      data.code || "Not configured";
+    labsContainer.replaceChildren();
 
-    document.getElementById("labSlot").textContent =
-      data.labSlot || "Not assigned";
+    data.labs.forEach((lab, index) => {
+      const card = document.createElement("article");
+      card.className = "lab-card";
 
-    document.getElementById("commitSha").textContent =
-      data.commitSha || "Awaiting deployment";
+      const icon = document.createElement("div");
+      icon.className = "lab-icon";
+      icon.textContent = icons[index] || "🏫";
 
-    document.getElementById("runNumber").textContent =
-      data.runNumber ?? "Awaiting deployment";
+      const title = document.createElement("h3");
+      title.textContent = lab.name;
+
+      const time = document.createElement("div");
+      time.className = "lab-time";
+      time.textContent = `${lab.opens} – ${lab.closes}`;
+
+      const label = document.createElement("p");
+      label.className = "lab-label";
+      label.textContent = "Scheduled lab session";
+
+      card.append(icon, title, time, label);
+      labsContainer.appendChild(card);
+    });
   } catch (error) {
-    console.error("Site data error:", error);
-    document.getElementById("collegeName").textContent =
-      "Data unavailable";
+    console.error("Website loading error:", error);
+    document.getElementById("college").textContent =
+      "Unable to load website data";
+    document.getElementById("labs").textContent =
+      "Please refresh the page or try again later.";
   }
 }
 
-loadSiteData();
+loadSite();
