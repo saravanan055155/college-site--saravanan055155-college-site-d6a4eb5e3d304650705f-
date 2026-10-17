@@ -6,12 +6,7 @@
   "commitSha": "",
   "runNumber": ""
   
-{
-  "collegeName": "Sri Krishna Arts and Science College",
-  "participantCode": "YOUR_ASSIGNED_PARTICIPANT_CODE",
-  "labSlot": "Initial Slot",
-  "commitSha": "",
-  "runNumber": "",
+
   "labs": [
     {
       "name": "Computer Lab 1",
