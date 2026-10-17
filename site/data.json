@@ -2,11 +2,6 @@
 {
   "college": "Sri Krishna Arts and Science College",
   "code": "d6a4eb5e3d304650705f",
-  "labSlot": "Initial Slot",
-  "commitSha": "",
-  "runNumber": ""
-  
-
   "labs": [
     {
       "name": "Computer Lab 1",
@@ -22,12 +17,6 @@
       "name": "Chemistry Lab",
       "opens": "14:00",
       "closes": "16:00"
-    },
-    {
-      "name": "Update YOUR_TOKEN",
-      "opens": "16:30",
-      "closes": "17:30"
     }
   ]
 }
-
